@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache, must-revalidate">
+    <meta http-equiv="expires" content="0">
+
+    <title>Hybro</title>
+
+     <link href="/css/all.css" rel="stylesheet">
+     <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <script>
+function startTime() {
+  var today = new Date();
+  var h = today.getHours();
+  var m = today.getMinutes();
+  var s = today.getSeconds();
+  m = checkTime(m);
+  s = checkTime(s);
+  document.getElementById('getTimeNow').innerHTML =
+  h + ":" + m + ":" + s;
+  var t = setTimeout(startTime, 500);
+}
+function checkTime(i) {
+  if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+  return i;
+}
+</script>
+
+</head>
+<body onload="startTime()">
+<style>
+#page-footer-min {
+	display: none;
+}
+
+#Preference {
+	display: none;
+  position: absolute;
+  z-index: 9;
+  background-color: #f1f1f1;
+  text-align: center;
+  border: 1px solid #d3d3d3;
+}
+
+#About {
+	display: none;
+  position: absolute;
+  z-index: 9;
+  background-color: #f1f1f1;
+  text-align: center;
+  border: 1px solid #d3d3d3;
+}
+
+#mydivheader {
+  padding: 10px;
+  cursor: move;
+  z-index: 10;
+  background-color: #ee6e73;
+  color: #fff;
+}
+
+#PreferenceContent {
+	margin-top: 25px;
+	padding-left: 35px;
+	padding-right: 35px;
+	margin-bottom: 25px;
+}
+</style>
+          
+
+<script> 
+	  $(document).ready(function(){
+    $('.collapsible').collapsible();
+  });
+
+      $(document).ready(function(){
+    $('select').formSelect();
+  });
+
+	  $(document).ready(function(){
+    $('.tooltipped').tooltip();
+  });
+
+
+  document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.fixed-action-btn');
+    var instances = M.FloatingActionButton.init(elems, {
+      direction: 'left'
+    });
+  });
+  
+
+
+function closefooter() {
+    var x = document.getElementById("page-footer-max");
+    var y = document.getElementById("page-footer-min");
+       if (x.style.display === "none") {
+        x.style.display = "block";
+        y.style.display =  "none";
+    } else {
+        x.style.display = "none";
+        y.style.display =  "block";
+    }
+}
+
+function loginstyleFunction() {
+    var x = document.getElementById("home");
+     var y = document.getElementById("more");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+        y.style.display =  "none";
+    } else {
+        x.style.display = "none";
+        y.style.display =  "block";
+    }
+}
+
+function LaunchCommunity() {
+	var login = "TRUE";
+    if (login == "TRUE") {
+    	 window.open('https://community.hybro.io', '_blank');
+    } else {
+    window.location.href = 'https://login.hybro.io';
+}
+}
+
+function About() {
+    var x = document.getElementById("About");
+        if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+}
+
+function Preference() {
+     var x = document.getElementById("Preference");
+        if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+}
+
+function showappsdock() {
+     var x = document.getElementById("appdock-appsbtn");
+     var y = document.getElementById("appdock-btn");
+     
+        if (x.style.display === "none") {
+        x.style.display = "block";
+        y.style.display = "none";
+    } else {
+        x.style.display = "none";
+        y.style.display = "block";
+    }
+}
+
+
+
+function searchFunction() {
+	var search = document.getElementById("search").value;
+    if (document.getElementById("search").value === "") {
+    	alert("Excuse me ... \nCan you let me know what you wanted to search ? \nI can't help you if you tell me nothing !")
+    } else {
+    window.location.href = 'https://www.google.com/search?q=' + search;
+}
+}
+
+function runScript(e) {
+    if (e.keyCode == 13) {
+        searchFunction();
+    }
+}
+
+
+
+</script>
+  
+<style>
+
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
+
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: 'Josefin Sans';
+}
+
+
+.bgimg {
+    background-color: #fff;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    color: #f44336;
+    
+}
+
+.bgdarklayer{
+    background-color: #282828;
+    height: 100%;
+    width: 100%;
+}
+
+.topleft {
+    position: absolute;
+    top: 0;
+    left: 16px;
+    
+    font-size: 25px;
+}
+
+.topright {
+    position: absolute;
+    top: 10px;
+    right: 16px;
+}
+
+.bottomleft {
+    position: absolute;
+    bottom: 10px;
+    left: 16px;
+ 
+}
+
+.bottomright {
+    position: absolute;
+    bottom: 10px;
+    right: 16px;
+
+}
+
+
+#home .middle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+
+#more .middle {
+    position: center;
+    top: 50%;
+    left: 50%;
+
+    text-align: center;
+        
+    font-size: 20px;
+    
+}
+
+
+
+.scoll-down-btn 			  { 
+
+    color:white;
+    background-color:#f44336;
+    border-radius:100px;
+border:2px solid #f44336;
+     padding: 5px;
+     padding-bottom:5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    position: relative;
+    height:35px;
+    width:35px;
+    
+}
+
+.scoll-down-btn:hover 			  { 
+    color:white;
+    border:2px solid #f44336;
+    background-color:white;
+    
+}
+
+.appdock-btn:hover {
+   color:black;
+    border:2px solid #f44336;
+    background-color:black;
+}
+
+#appdock-appsbtn {
+	display: none;
+}
+
+.modal-btn 			  { 
+
+    /* border: 1px solid #4CAF50; */
+
+    color:white;
+    background-color:transparent;
+    border: 1px solid white; 
+
+     padding: 10px 25px;
+     padding-bottom:5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    position: relative;
+
+    
+}
+
+.modal-btn:hover 			  { 
+   color:white;
+    background-color:#f44336;
+    
+}
+
+
+
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0} 
+    to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+
+
+#more {
+    font-size:10px;
+ display:none;
+}
+
+
+
+
+.bottomleft {
+    font-size:14px;
+}
+
+hr {
+    margin: auto;
+    width: 40%;
+}
+
+@media only screen and (max-width: 600px) {
+    #more h1 {
+        font-size:70%;
+    }
+    
+    #more p {
+        font-size:70%;
+    }
+    
+        #more a {
+        font-size:60%;
+    }
+    
+}
+</style>
+
+
+<div class="bgimg">
+	<div class="bgdarklayer">
+
+
+
+
+
+  <div class="topleft">
+    <p>Hybro</p>
+  </div>
+ <div class="topright">
+    <a href="/login"><p style="color: #f44336;">Login</p></a>
+  </div>
+    
+
+<div id="home" style="display: block;">
+  <div class="middle">
+
+  	     <img src="https://hybro.io/hybrologobanner.png" width="240px">
+
+        <div style="height:5px;"></div>
+
+        <div class="input-field col s6">
+          <input style="color:#fff;" id="search" type="text" class="validate" onkeypress="return runScript(event)">
+          <label for="search"><span class="red-text">Search using Google</span></label>
+        </div>
+
+    <!-- <p>I'm feeling lucky !</p> -->
+    <div style="height:5px;"></div>
+    <!-- <a class="scoll-down-btn" onclick="loginstyleFunction()"><i class="fa fa-angle-double-down"></i></a> -->
+  	 <a class="scoll-down-btn" onclick="searchFunction()"><i class="fas fa-arrow-right"></i></a>
+
+  	 		<div id="About">
+  <div id="mydivheader">About Hybro</div>
+  <div id="PreferenceContent">
+  	<div class="row">
+    <div class="col s12 m6">
+      <div class="card blue-grey">
+        <div class="card-content white-text">
+          <span class="card-title">About Hybro</span>
+          <p>I am a very simple card. I am good at containing small bits of information.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <ul class="collapsible">
+    <li>
+      <div class="collapsible-header"><i class="material-icons"></i>First</div>
+      <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+    </li>
+    <li>
+      <div class="collapsible-header"><i class="material-icons"></i>Second</div>
+      <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+    </li>
+    <li>
+      <div class="collapsible-header"><i class="material-icons"></i>Third</div>
+      <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+    </li>
+  </ul>
+</div>
+<div id="mydivheader"><a class="grey-text text-lighten-3" onclick="About()">Close</a></div>
+</div>
+
+<div id="Preference">
+  <div id="mydivheader">Preference</div>
+  <div id="PreferenceContent">
+
+
+
+  <p>Theme :   
+  	<div class="switch">
+    <label>
+      Light
+      <input type="checkbox">
+      <span class="lever"></span>
+      Dark
+    </label>
+  </div>
+  <br>
+</p>
+
+  <p>Language :  
+
+   <div class="input-field col s12 m6">
+    <select class="icons">
+      <option value="" disabled selected>Select a Language</option>
+      <option value="" data-icon="">English</option>
+      <option value="" data-icon="">Chinese (HK)</option>
+      <option value="" data-icon="">Coming Soon</option>
+    </select>
+  </div>
+
+  <br>
+</p>
+
+  <p>Notification :  
+  	<div class="switch">
+    <label>
+      Off
+      <input type="checkbox">
+      <span class="lever"></span>
+      On
+    </label>
+  </div>
+  <br>
+</p>
+
+</div>
+<div id="mydivheader"><a class="grey-text text-lighten-3" onclick="Preference()">Close</a></div>
+</div>
+
+
+  </div>
+</div>
+
+<div class="bottomright" id="bottomright">
+
+<div id="appdock-appsbtn">
+
+<a class="scoll-down-btn appdock-appsbtn btn tooltipped" data-position="top" data-tooltip="About Hybro"onclick="About()"><i class="fas fa-info"></i></a>
+<a class="scoll-down-btn appdock-appsbtn btn tooltipped" data-position="top" data-tooltip="Hi Bro"onclick="closefooter()"><i class="fas fa-microphone"></i></a>
+<a class="scoll-down-btn appdock-appsbtn btn tooltipped" data-position="top" data-tooltip="App Store"onclick="closefooter()"><i class="fas fa-store-alt"></i></a>
+<a class="scoll-down-btn appdock-appsbtn btn tooltipped" data-position="top" data-tooltip="HiShop"onclick="closefooter()"><i class="fas fa-shopping-bag"></i></a>
+<a class="scoll-down-btn appdock-appsbtn btn tooltipped" data-position="top" data-tooltip="HyChat"onclick="closefooter()"><i class="fas fa-comments"></i></a>
+<a class="scoll-down-btn appdock-appsbtn btn tooltipped" data-position="top" data-tooltip="HydrIDE"onclick="closefooter()"><i class="fas fa-code"></i></a>
+<a class="scoll-down-btn appdock-appsbtn btn tooltipped" data-position="top" data-tooltip="HiMail"onclick="closefooter()"><i class="fas fa-envelope"></i></a>
+<a class="scoll-down-btn appdock-appsbtn btn tooltipped" data-position="top" data-tooltip="HyCloud"onclick="closefooter()"><i class="fas fa-cloud"></i></a>
+<a class="scoll-down-btn appdock-appsbtn btn tooltipped" data-position="top" data-tooltip="HiPhotos"onclick="closefooter()"><i class="far fa-image"></i></a>
+<a class="scoll-down-btn appdock-appsbtn btn tooltipped" data-position="top" data-tooltip="HiNotes"onclick="closefooter()"><i class="fas fa-sticky-note"></i></a>
+<a class="scoll-down-btn appdock-appsbtn btn tooltipped" data-position="top" data-tooltip="Calculator"onclick="closefooter()"><i class="fas fa-calculator"></i></a>
+<a class="scoll-down-btn appdock-appsbtn btn tooltipped" data-position="top" data-tooltip="Preference" onclick="Preference()"><i class="fas fa-cog"></i></a>
+<a class="scoll-down-btn appdock-appsbtn btn tooltipped" data-position="top" data-tooltip="Close Dock" onclick="showappsdock()"><i class="fas fa-times"></i></a>
+
+
+</div>
+
+<div id="appdock-btn"><a class="scoll-down-btn appdock-btn btn tooltipped" data-position="top" data-tooltip="App Dock" onclick="showappsdock()"><i class="fas fa-rocket"></i></a></div>
+
+
+</div>
+
+
+<div class="bottomleft" id="bottomleft">
+
+<div id="page-footer-min">
+	<a class="scoll-down-btn btn tooltipped" data-position="top" data-tooltip="Menu" onclick="closefooter()"><i class="fas fa-toolbox"></i></a>
+</div>
+
+<div id="page-footer-max">
+<footer class="page-footer">
+          <div class="container">
+            <div class="row">
+            	<h5 class="white-text"><div id="getTimeNow">10:09</div></h5>
+              <div class="col l6 s12">
+                <h5 class="white-text">Hybro</h5>
+                <p class="grey-text text-lighten-4">Welcome to Hybro ! Innovatons make life better !</p>
+              </div>
+              <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">More</h5>
+                <ul>
+                  <li><a class="grey-text text-lighten-3" onclick="About()" >About us</a></li>
+                  <li><a class="grey-text text-lighten-3" onclick="LaunchCommunity()">Community</a></li>
+                  <li><a class="grey-text text-lighten-3" href="//github.com/hybroteam/" target="_blank">GitHub</a></li>
+                  <li><a class="grey-text text-lighten-3" onclick="Preference()">Perference</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container">
+            © 2019 Hybro
+            <a class="grey-text text-lighten-4 right" onclick="closefooter()">Close</a>
+            </div>
+          </div>
+        </footer>
+            </div>
+
+
+        </div>
+ 
+ <script>
+//Make the DIV element draggagle:
+dragElement(document.getElementById("Preference"));
+dragElement(document.getElementById("About"));
+
+
+function dragElement(elmnt) {
+  var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+  if (document.getElementById(elmnt.id + "header")) {
+    /* if present, the header is where you move the DIV from:*/
+    document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
+  } else {
+    /* otherwise, move the DIV from anywhere inside the DIV:*/
+    elmnt.onmousedown = dragMouseDown;
+  }
+
+  function dragMouseDown(e) {
+    e = e || window.event;
+    e.preventDefault();
+    // get the mouse cursor position at startup:
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    document.onmouseup = closeDragElement;
+    // call a function whenever the cursor moves:
+    document.onmousemove = elementDrag;
+  }
+
+  function elementDrag(e) {
+    e = e || window.event;
+    e.preventDefault();
+    // calculate the new cursor position:
+    pos1 = pos3 - e.clientX;
+    pos2 = pos4 - e.clientY;
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    // set the element's new position:
+    elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+    elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+  }
+
+  function closeDragElement() {
+    /* stop moving when mouse button is released:*/
+    document.onmouseup = null;
+    document.onmousemove = null;
+  }
+}
+</script> 	 
+  	 
+  </div>
+</div>
+</div>
+</div>
+
+</body></html>
