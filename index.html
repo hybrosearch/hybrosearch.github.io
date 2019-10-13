@@ -15,6 +15,9 @@
      <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="http://code.jquery.com/ui/1.8.21/jquery-ui.min.js"></script>
+<script src="jquery.ui.touch-punch.min.js"></script>
+
 
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
@@ -117,6 +120,10 @@ function checkTime(i) {
           
 
 <script> 
+
+$('#widget').draggable();
+
+
 	  $(document).ready(function(){
     $('.collapsible').collapsible();
   });
@@ -237,6 +244,26 @@ function Preference() {
     } else {
         x.style.display = "none";
     }
+
+    var theme = document.getElementById("thememode").checked;
+    var background = document.getElementById("bgdarklayer");
+   
+   if (theme == false) {
+     background.style.backgroundColor = "#fff";
+     M.toast({html: 'Theme set to Light Mode!', classes: 'rounded'})
+   } else {
+     background.style.backgroundColor = "#282828";
+     M.toast({html: 'Theme set to Dark Mode !', classes: 'rounded'})
+   }
+
+    var notice = document.getElementById("notificationswitch").checked;
+   
+   if (notice == false) {
+       M.toast({html: 'Notification is turned OFF!', classes: 'rounded'})
+   } else {
+       M.toast({html: 'Notification is turned ON', classes: 'rounded'})
+   }
+
 }
 
 function showappsdock() {
@@ -482,7 +509,7 @@ hr {
 
 
 <div class="bgimg">
-	<div class="bgdarklayer">
+	<div id="bgdarklayer" class="bgdarklayer">
 
 
 
@@ -630,7 +657,7 @@ You may want to see our products <a href="">here</a> !
 
     </div>
 
-  	<iframe id="browserframe" src="https://hybro.io"></iframe>
+  	<iframe height="500" id="browserframe" src="https://hybro.io"></iframe>
 <div id="mydivheader"><a class="grey-text text-lighten-3" onclick="launchbrowser()">Close</a></div>
 </div>
 
@@ -683,7 +710,7 @@ You may want to see our products <a href="">here</a> !
   	<div class="switch">
     <label>
       Light
-      <input type="checkbox">
+      <input id="thememode" type="checkbox">
       <span class="lever"></span>
       Dark
     </label>
@@ -709,7 +736,7 @@ You may want to see our products <a href="">here</a> !
   	<div class="switch">
     <label>
       Off
-      <input type="checkbox">
+      <input id="notificationswitch" type="checkbox">
       <span class="lever"></span>
       On
     </label>
