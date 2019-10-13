@@ -120,6 +120,7 @@ function checkTime(i) {
           
 
 <script> 
+	var notification = false;
 
 $('#widget').draggable();
 
@@ -250,18 +251,20 @@ function Preference() {
    
    if (theme == false) {
      background.style.backgroundColor = "#fff";
-     M.toast({html: 'Theme set to Light Mode!', classes: 'rounded'})
+     if (notification == true) { M.toast({html: 'Theme set to Light Mode!', classes: 'rounded'}) }
    } else {
      background.style.backgroundColor = "#282828";
-     M.toast({html: 'Theme set to Dark Mode !', classes: 'rounded'})
+     if (notification == true) { M.toast({html: 'Theme set to Dark Mode !', classes: 'rounded'}) }
    }
 
     var notice = document.getElementById("notificationswitch").checked;
    
    if (notice == false) {
-       M.toast({html: 'Notification is turned OFF!', classes: 'rounded'})
+   	   notification = false;
+       if (notification == true) { M.toast({html: 'Notification is turned OFF!', classes: 'rounded'}) }
    } else {
-       M.toast({html: 'Notification is turned ON', classes: 'rounded'})
+   	   notification = true;
+       if (notification == true) { M.toast({html: 'Notification is turned ON', classes: 'rounded'}) }
    }
 
 }
