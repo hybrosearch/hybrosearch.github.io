@@ -62,6 +62,43 @@ function checkTime(i) {
   border: 1px solid #d3d3d3;
 }
 
+#Browser {
+	display: none;
+  position: absolute;
+  z-index: 9;
+  background-color: #f1f1f1;
+  text-align: center;
+  border: 1px solid #d3d3d3;
+}
+
+#Calculator {
+	display: none;
+  position: absolute;
+  z-index: 9;
+  background-color: #f1f1f1;
+  text-align: center;
+  border: 1px solid #d3d3d3;
+}
+
+#spotify {
+	display: none;
+  position: absolute;
+  z-index: 9;
+  background-color: #f1f1f1;
+  text-align: center;
+  border: 1px solid #d3d3d3;
+}
+
+
+#Notes {
+	display: none;
+  position: absolute;
+  z-index: 9;
+  background-color: #f1f1f1;
+  text-align: center;
+  border: 1px solid #d3d3d3;
+}
+
 #mydivheader {
   padding: 10px;
   cursor: move;
@@ -92,6 +129,10 @@ function checkTime(i) {
     $('.tooltipped').tooltip();
   });
 
+  $(document).ready(function(){
+    $('.carousel').carousel();
+  });
+      
 
   document.addEventListener('DOMContentLoaded', function() {
     var elems = document.querySelectorAll('.fixed-action-btn');
@@ -144,6 +185,51 @@ function About() {
     }
 }
 
+function launchbrowser() {
+    var x = document.getElementById("Browser");
+        if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+}
+
+function LaunchCal() {
+    var x = document.getElementById("Calculator");
+        if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+}
+
+function LaunchNotes() {
+    var x = document.getElementById("Notes");
+        if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+}
+
+function LaunchSpotify() {
+    var x = document.getElementById("spotify");
+        if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+}
+
+
+function calMath(i) {
+	var math = document.getElementById("calculator").value;
+     if (e == 1) {
+         document.getElementById('calculator').innerHTML = math + e;
+    }
+}
+
+
 function Preference() {
      var x = document.getElementById("Preference");
         if (x.style.display === "none") {
@@ -177,12 +263,34 @@ function searchFunction() {
 }
 }
 
+
+function browserloadurlFunction() {
+	var urlcontent = document.getElementById("browser-enterurl").value;
+   document.getElementById('browserframe').src= urlcontent;
+}
+
+function loadspotifyFunction() {
+	var urlcontent = document.getElementById("spotify-id").value;
+   document.getElementById('loadspotify').src= "https://embed.spotify.com/?uri=" + urlcontent;
+}
+
 function runScript(e) {
     if (e.keyCode == 13) {
         searchFunction();
     }
 }
 
+function browserurl(e) {
+    if (e.keyCode == 13) {
+        browserloadurlFunction();
+    }
+}
+
+function spotifyurl(e) {
+    if (e.keyCode == 13) {
+        loadspotifyFunction();
+    }
+}
 
 
 </script>
@@ -413,28 +521,157 @@ hr {
       <div class="card blue-grey">
         <div class="card-content white-text">
           <span class="card-title">About Hybro</span>
-          <p>I am a very simple card. I am good at containing small bits of information.</p>
+          <p>Welcome to Hybro ! Innovatons make life better !</p>
         </div>
       </div>
     </div>
   </div>
   <ul class="collapsible">
+
+
     <li>
-      <div class="collapsible-header"><i class="material-icons"></i>First</div>
-      <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+      <div class="collapsible-header"><i class="material-icons"></i>Our Story</div>
+      <div class="collapsible-body"><span>
+
+  Our mission is to make use of innovations and technologies for improving our world and making a better quality of life. Hybro was found in 2018 while we had an old team name called "Whatcraft Team" which was found in 2017. Our team's main committees are secondary or higher form students in Hong Kong who are interested in IT. We aim to create project & products that can improve our city and brings useful, accessible and efficient. 
+
+  </span>
+</div>
     </li>
+
+
     <li>
-      <div class="collapsible-header"><i class="material-icons"></i>Second</div>
-      <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+      <div class="collapsible-header"><i class="material-icons"></i>Our Products</div>
+      <div class="collapsible-body">
+      	<span>
+
+
+  
+  </span>
+</div>
     </li>
+
+
     <li>
-      <div class="collapsible-header"><i class="material-icons"></i>Third</div>
-      <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+      <div class="collapsible-header"><i class="material-icons"></i>Our Team</div>
+      <div class="collapsible-body">
+      	<span>
+      	
+Our team is currently working only in their free time, <br> so we apologize for not updating our products or projects regularly.
+<br>
+<br>
+Our Founder :
+<br>
+<br>
+Samuel Ng
+(Hybro's CEO)
+<br>
+I've sth to say ...
+<br>
+<br>
+Our Co-Founders :
+<br>
+<br>
+Issac Chan
+(Hybro's CTO)
+<br>
+I've sth to say ...
+<br>
+<br>
+Hei Tsui
+(Hybro's CTO)
+<br>
+I've sth to say ...
+<br>
+<br>
+Our Committees :
+<br>
+<br>
+KrishuTech
+(Hybro's Developer & Video Production)
+<br>
+I've sth to say ...
+<br>
+<br>
+WebMaye
+(Hybro's Developer)
+<br>
+I've sth to say ...
+<br>
+<br>
+Get in touch with us ?
+<br>
+Let's <a href="">click here</a> to be a part of us !
+<br>
+<br>
+Or ...
+<br>
+<br>
+You may want to see our products <a href="">here</a> !
+
+      </span>
+  </div>
     </li>
+
+
   </ul>
 </div>
+
 <div id="mydivheader"><a class="grey-text text-lighten-3" onclick="About()">Close</a></div>
 </div>
+
+<div id="Browser">
+  <div id="mydivheader">Web Browser</div>
+    <div>
+    	   <div class="input-field col s6">
+          <input style="color:#f44336;" id="browser-enterurl" type="text" class="validate" onkeypress="return browserurl(event)">
+          <label for="browser-enterurl"><span class="red-text">Enter URL</span></label>
+        </div>
+
+    </div>
+
+  	<iframe id="browserframe" src="https://hybro.io"></iframe>
+<div id="mydivheader"><a class="grey-text text-lighten-3" onclick="launchbrowser()">Close</a></div>
+</div>
+
+
+<div id="Calculator">
+  <div id="mydivheader">Calculator</div>
+    <div>
+<iframe src="/calculator/dist" height="580px"></iframe>
+    </div>
+
+  	
+<div id="mydivheader"><a class="grey-text text-lighten-3" onclick="LaunchCal()">Close</a></div>
+</div>
+
+<div id="Notes">
+  <div id="mydivheader">HiNotes</div>
+    <div>
+<iframe src="/notes/dist" height="580px"></iframe>
+    </div>
+
+  	
+<div id="mydivheader"><a class="grey-text text-lighten-3" onclick="LaunchNotes()">Close</a></div>
+</div>
+
+<div id="spotify">
+  <div id="mydivheader">Spotify Web Player (Beta)</div>
+      <div>
+    	   <div class="input-field col s6">
+          <input style="color:#f44336;" id="spotify-id" type="text" class="validate" onkeypress="return spotifyurl(event)">
+          <label for="spotify-id"><span class="red-text">Spotify URL</span></label>
+        </div>
+
+    </div>
+    <div>
+<iframe id="loadspotify" src="https://embed.spotify.com/?uri=spotify:user:spotify:playlist:3rgsDhGHZxZ9sB9DQWQfuf" height="480" frameborder="0" allowtransparency="true"></iframe>
+    </div>
+
+  	
+<div id="mydivheader"><a class="grey-text text-lighten-3" onclick="LaunchSpotify()">Close</a></div>
+</div>
+
 
 <div id="Preference">
   <div id="mydivheader">Preference</div>
@@ -494,6 +731,8 @@ hr {
 
 <a class="scoll-down-btn appdock-appsbtn btn tooltipped" data-position="top" data-tooltip="About Hybro"onclick="About()"><i class="fas fa-info"></i></a>
 <a class="scoll-down-btn appdock-appsbtn btn tooltipped" data-position="top" data-tooltip="Hi Bro"onclick="closefooter()"><i class="fas fa-microphone"></i></a>
+<a class="scoll-down-btn appdock-appsbtn btn tooltipped" data-position="top" data-tooltip="Spotify Music (Beta)"onclick="LaunchSpotify()"><i class="fab fa-spotify"></i></a>
+<a class="scoll-down-btn appdock-appsbtn btn tooltipped" data-position="top" data-tooltip="Browser (Beta)"onclick="launchbrowser()"><i class="fab fa-chrome"></i></a>
 <a class="scoll-down-btn appdock-appsbtn btn tooltipped" data-position="top" data-tooltip="App Store"onclick="closefooter()"><i class="fas fa-store-alt"></i></a>
 <a class="scoll-down-btn appdock-appsbtn btn tooltipped" data-position="top" data-tooltip="HiShop"onclick="closefooter()"><i class="fas fa-shopping-bag"></i></a>
 <a class="scoll-down-btn appdock-appsbtn btn tooltipped" data-position="top" data-tooltip="HyChat"onclick="closefooter()"><i class="fas fa-comments"></i></a>
@@ -501,8 +740,8 @@ hr {
 <a class="scoll-down-btn appdock-appsbtn btn tooltipped" data-position="top" data-tooltip="HiMail"onclick="closefooter()"><i class="fas fa-envelope"></i></a>
 <a class="scoll-down-btn appdock-appsbtn btn tooltipped" data-position="top" data-tooltip="HyCloud"onclick="closefooter()"><i class="fas fa-cloud"></i></a>
 <a class="scoll-down-btn appdock-appsbtn btn tooltipped" data-position="top" data-tooltip="HiPhotos"onclick="closefooter()"><i class="far fa-image"></i></a>
-<a class="scoll-down-btn appdock-appsbtn btn tooltipped" data-position="top" data-tooltip="HiNotes"onclick="closefooter()"><i class="fas fa-sticky-note"></i></a>
-<a class="scoll-down-btn appdock-appsbtn btn tooltipped" data-position="top" data-tooltip="Calculator"onclick="closefooter()"><i class="fas fa-calculator"></i></a>
+<a class="scoll-down-btn appdock-appsbtn btn tooltipped" data-position="top" data-tooltip="HiNotes"onclick="LaunchNotes()"><i class="fas fa-sticky-note"></i></a>
+<a class="scoll-down-btn appdock-appsbtn btn tooltipped" data-position="top" data-tooltip="Calculator"onclick="LaunchCal()"><i class="fas fa-calculator"></i></a>
 <a class="scoll-down-btn appdock-appsbtn btn tooltipped" data-position="top" data-tooltip="Preference" onclick="Preference()"><i class="fas fa-cog"></i></a>
 <a class="scoll-down-btn appdock-appsbtn btn tooltipped" data-position="top" data-tooltip="Close Dock" onclick="showappsdock()"><i class="fas fa-times"></i></a>
 
@@ -557,6 +796,10 @@ hr {
 //Make the DIV element draggagle:
 dragElement(document.getElementById("Preference"));
 dragElement(document.getElementById("About"));
+dragElement(document.getElementById("Browser"));
+dragElement(document.getElementById("Calculator"));
+dragElement(document.getElementById("Notes"));
+dragElement(document.getElementById("spotify"));
 
 
 function dragElement(elmnt) {

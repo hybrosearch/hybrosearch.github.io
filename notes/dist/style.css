@@ -1,0 +1,26 @@
+body {
+  background: #f3f1f2;
+  font-family: sans-serif;
+}
+
+.app {
+}
+
+.app .ql-container {
+  background: #fefcfc;
+}
+
+/* Snow Theme */
+.app .ql-snow.ql-toolbar {
+  display: block;
+  background: #eaecec;
+
+}
+.app .ql-editor {
+  min-height: 18em;
+}
+
+.themeSwitcher {
+  margin-top: 0.5em;
+  font-size: small;
+}
